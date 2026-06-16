@@ -23,13 +23,13 @@ button {
     padding: 8px 12px;
     cursor: pointer;
     border: none;
-    background: hsl(167, 75%, 46%);
+    background: hsl(160, 79%, 15%);
     color: white;
     border-radius: 5px;
 }
 
 button:hover {
-    background: hsl(0, 0%, 0%);
+    background: hsl(160, 79%, 15%);
 }
 
 input {
@@ -53,7 +53,7 @@ th, td {
 
 .actions button {
     background: transparent;
-    color: black;
+    color: hsla(160, 79%, 15%, 0.555);
     font-size: 16px;
 }
 
@@ -72,7 +72,7 @@ th, td {
     width: 100%;
     padding: 15px;
     font-size: 18px;
-    background: hsl(167, 75%, 46%);
+    background: hsl(160, 79%, 15%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -83,7 +83,7 @@ th, td {
 
 
 .menu-btn:hover {
-    background: hsl(180, 23%, 3%);
+    background: hsla(160, 79%, 15%, 0.555);
     transform: translateY(-2px);
 }
 
@@ -109,7 +109,7 @@ th, td {
 /* Красива шапка */
 
 h1 {
-    color: hsl(167, 75%, 46%);
+    color: hsla(160, 79%, 15%, 0.555);
     margin-bottom: 25px;
 }
 
