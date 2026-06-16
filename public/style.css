@@ -1,60 +1,143 @@
-body {
-    font-family: Arial;
-    background: #f4f6f9;
+:root {
+    --primary-color: #2B9348;
+    --primary-color-hover: #24783B;
+    --background-color: #F4F6F9;
+    --text-color: #24783B;
+    --card-background: #FFF6D9;
+    --card-border: #FFB300;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background-color);
 }
 
 .container {
-    max-width: 900px;
-    margin: 30px auto;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 24px;
 }
 
 h1 {
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 32px;
 }
 
 .top-bar {
     display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 button {
-    padding: 8px 12px;
+    padding: 12px 16px;
     cursor: pointer;
     border: none;
-    background: hsl(160, 79%, 15%);
-    color: white;
-    border-radius: 5px;
+    background: var(--primary-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    color: #FFFFFF;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: hsl(160, 79%, 15%);
+    background: var(--primary-color-hover);
 }
 
 input {
     flex: 1;
-    padding: 8px;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: white;
-    border-radius: 10px;
+    border-radius: 16px;
     overflow: hidden;
 }
 
-th, td {
-    padding: 10px;
+th,
+td {
+    padding: 16px;
     border-bottom: 1px solid #eee;
     text-align: left;
 }
 
+#tableBody {
+    font-weight: 500;
+}
+
 .actions button {
     background: transparent;
-    color: hsla(160, 79%, 15%, 0.555);
+    color: var(--text-color);
     font-size: 16px;
+}
+
+.edit-btn, .delete-btn {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+.edit-btn:hover {
+    background: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+    color: #FFFFFF;
+}
+
+.delete-btn {
+    border-color: #DC3545;
+    color: #DC3545;
+}
+
+.delete-btn:hover {
+    background: #DC3545;
+    color: white;
+}
+
+.edit-btn svg,
+.delete-btn svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* =========================
@@ -64,34 +147,45 @@ th, td {
 .menu {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
-
 
 .menu-btn {
     width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    background: hsl(160, 79%, 15%);
+    padding: 24px;
+    font-size: 22px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    background: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     cursor: pointer;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
     transition: 0.3s;
 }
 
-
 .menu-btn:hover {
-    background: hsla(160, 79%, 15%, 0.555);
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
 }
 
+.menu-btn-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn-icon svg {
+    width: 48px;
+    height: 48px;
+}
 
 .hidden {
     display: none;
 }
-
 
 /* =========================
    Блоки секцій
@@ -100,95 +194,41 @@ th, td {
 #monthSection,
 #employeesSection {
     background: white;
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 36px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-
-/* Красива шапка */
-
-h1 {
-    color: hsla(160, 79%, 15%, 0.555);
-    margin-bottom: 25px;
-}
-
-
-/* Контейнер */
-
-.container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-
-.menu-btn {
-    width: 100%;
-    font-size: 18px;
-    padding: 15px;
-    text-align: left;
-}
-
-
-#monthSection {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-}
-
+/* =========================
+   Картки ДН
+========================= */
 
 .birthday-card {
-
     display: flex;
     align-items: center;
-
-    background: #fff6d9;
-
-    border-left: 6px solid #ffb300;
-
-    margin: 10px 0;
-    padding: 15px;
-
-    border-radius: 8px;
+    background: var(--card-background);
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 16px;
 }
 
-
 .birthday-day {
-
     width: 55px;
     height: 55px;
-
-    background: #ffb300;
-
+    background: var(--card-border);
     color: white;
-
+    font-family: var(--font-family);
     font-size: 20px;
-    font-weight: bold;
-
-    border-radius: 50%;
-
+    font-weight: 700;
+    border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin-right: 15px;
+    margin-right: 16px;
+    flex-shrink: 0;
 }
 
-
 .birthday-name {
-
     font-size: 18px;
     font-weight: 600;
 }
