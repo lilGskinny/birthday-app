@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Менеджер днів народження</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>🎂 Менеджер днів народження</h1>
+
+    <div class="menu">
+
+    <button class="menu-btn"
+        onclick="toggleSection('monthSection')">
+
+        🎂 Іменинники поточного місяця
+
+    </button>
+
+
+    <div id="monthSection" class="hidden">
+
+        <div id="monthList">
+            Тут буде список іменинників
+        </div>
+
+    </div>
+
+
+    <button class="menu-btn"
+        onclick="toggleSection('employeesSection')">
+
+        👥 Всі співробітники
+
+    </button>
+
+
+    <div id="employeesSection" class="hidden">
+
+
+    <div class="top-bar">
+
+    <input id="nameInput" placeholder="ПІБ">
+
+    <input 
+        id="dateInput"
+        type="date"
+    >
+
+    <button 
+    class="save-btn"
+    onclick="saveEmployee()"
+>
+    💾 Зберегти
+</button>
+
+    <button onclick="loadEmployees()">
+        🔄 Оновити
+    </button>
+
+    <input 
+        id="search"
+        placeholder="Пошук..."
+        oninput="search()"
+    >
+
+</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ПІБ</th>
+                <th>Дата</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+    </table>
+
+        </table>
+
+    </div> <!-- employeesSection -->
+
+    </div> <!-- menu -->
+
+</div> <!-- container -->
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
