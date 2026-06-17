@@ -6,21 +6,21 @@ const app = express();
 const PORT = 3000;
 
 
-// дозволяє отримувати JSON з fetch()
+
 app.use(express.json());
 
 
-// показуємо файли з папки public
+
 app.use(express.static(
     path.join(__dirname, "public")
 ));
 
 
-// підключення до бази
+
 const db = new sqlite3.Database("database.db");
 
 
-// створення таблиці
+
 db.run(`
     CREATE TABLE IF NOT EXISTS employees (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,10 +30,7 @@ db.run(`
 `);
 
 
-// ======================
-// Отримати всіх людей
-// GET /employees
-// ======================
+
 
 app.get("/employees", (req, res) => {
 
@@ -55,10 +52,7 @@ app.get("/employees", (req, res) => {
 });
 
 
-// ======================
-// Додати людину
-// POST /employees
-// ======================
+
 
 app.post("/employees", (req, res) => {
 
@@ -92,7 +86,7 @@ app.post("/employees", (req, res) => {
 
 });
 
-// Видалити співробітника
+
 app.delete("/employees/:id", (req, res) => {
 
     const id = req.params.id;
@@ -115,7 +109,7 @@ app.delete("/employees/:id", (req, res) => {
 
 });
 
-// Оновити співробітника
+
 app.put("/employees/:id", (req, res) => {
 
     const id = req.params.id;
@@ -151,10 +145,7 @@ app.put("/employees/:id", (req, res) => {
 
 });
 
-// ======================
-// Іменинники поточного місяця
-// GET /employees/month/current
-// ======================
+
 
 app.get("/employees/month/current", (req, res) => {
 
@@ -186,7 +177,7 @@ app.get("/employees/month/current", (req, res) => {
 
 });
 
-// запуск сервера
+
 
 app.listen(PORT, () => {
 

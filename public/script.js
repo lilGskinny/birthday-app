@@ -2,9 +2,7 @@ let employees = [];
 let editId = null;
 
 
-// ============================
-// Завантаження працівників
-// ============================
+
 
 async function loadEmployees() {
 
@@ -26,9 +24,7 @@ async function loadEmployees() {
 }
 
 
-// ============================
-// Відображення таблиці
-// ============================
+
 
 function renderTable(data) {
 
@@ -70,9 +66,7 @@ function renderTable(data) {
 }
 
 
-// ============================
-// Формат дати
-// ============================
+
 
 function formatDate(date) {
 
@@ -84,9 +78,7 @@ function formatDate(date) {
 }
 
 
-// ============================
-// Додавання / редагування
-// ============================
+
 
 async function saveEmployee() {
 
@@ -141,7 +133,7 @@ async function saveEmployee() {
         } else {
 
 
-            // РЕДАГУВАТИ
+            
             await fetch(`/employees/${editId}`, {
 
                 method: "PUT",
@@ -176,9 +168,7 @@ async function saveEmployee() {
 }
 
 
-// ============================
-// Почати редагування
-// ============================
+
 
 function editEmployee(id) {
 
@@ -208,9 +198,7 @@ function editEmployee(id) {
 }
 
 
-// ============================
-// Видалення
-// ============================
+
 
 async function deleteEmployee(id) {
 
@@ -247,9 +235,7 @@ async function deleteEmployee(id) {
 }
 
 
-// ============================
-// Пошук
-// ============================
+
 
 function search() {
 
@@ -274,9 +260,7 @@ function search() {
 }
 
 
-// ============================
-// Очистка форми
-// ============================
+
 
 function clearForm() {
 
@@ -291,9 +275,7 @@ function clearForm() {
 }
 
 
-// ============================
-// Зміна тексту кнопки
-// ============================
+
 
 function changeButtonText() {
 
@@ -320,9 +302,7 @@ function changeButtonText() {
 }
 
 
-// ============================
-// Робимо доступними для HTML
-// ============================
+
 
 window.saveEmployee =
     saveEmployee;
@@ -341,7 +321,7 @@ window.search =
 
 
 window.toggleSection = toggleSection;    
-// Відкрити / закрити секцію
+
 
 function toggleSection(id) {
 
@@ -353,7 +333,7 @@ function toggleSection(id) {
 }
 
 
-// Робимо доступною з HTML
+
 
 window.toggleSection =
     toggleSection;
@@ -442,8 +422,6 @@ function toggleSection(id) {
 
 }
 
-// ============================
-// Старт
-// ============================
+
 
 loadEmployees();
